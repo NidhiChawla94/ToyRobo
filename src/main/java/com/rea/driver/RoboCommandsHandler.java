@@ -1,17 +1,17 @@
-package main.java.com.robo.driver;
+package main.java.com.rea.driver;
 import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import main.java.com.commandpattern.Command;
-import main.java.com.commandpattern.LeftCommand;
-import main.java.com.commandpattern.MoveCommand;
-import main.java.com.commandpattern.PlaceCommand;
-import main.java.com.commandpattern.ReportCommand;
-import main.java.com.commandpattern.RightCommand;
-import main.java.com.robo.Direction;
-import main.java.com.robo.ToyRobo;
-import main.java.com.robo.util.Constants;
+import main.java.com.rea.commandpattern.Command;
+import main.java.com.rea.commandpattern.LeftCommand;
+import main.java.com.rea.commandpattern.MoveCommand;
+import main.java.com.rea.commandpattern.PlaceCommand;
+import main.java.com.rea.commandpattern.ReportCommand;
+import main.java.com.rea.commandpattern.RightCommand;
+import main.java.com.rea.robo.Direction;
+import main.java.com.rea.robo.ToyRobo;
+import main.java.com.rea.util.Constants;
 
 public class RoboCommandsHandler {
 	private static ToyRobo robo = null;

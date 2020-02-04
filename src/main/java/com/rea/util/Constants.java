@@ -1,4 +1,4 @@
-package main.java.com.robo.util;
+package main.java.com.rea.util;
 
 public interface Constants {
 	String LEFT= "LEFT";

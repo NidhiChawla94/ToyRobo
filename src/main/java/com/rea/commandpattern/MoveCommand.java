@@ -1,7 +1,7 @@
-package main.java.com.commandpattern;
+package main.java.com.rea.commandpattern;
 
 
-import main.java.com.robo.ToyRobo;
+import main.java.com.rea.robo.ToyRobo;
 
 public class MoveCommand implements Command {
 

@@ -1,4 +1,4 @@
-package main.java.com.robo;
+package main.java.com.rea.robo;
 
 public enum Direction {
 	NORTH,
