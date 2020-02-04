@@ -1,7 +1,5 @@
 package main.java.com.robo.util;
 
-import java.util.regex.Pattern;
-
 public interface Constants {
 	String LEFT= "LEFT";
 	String MOVE = "MOVE";
