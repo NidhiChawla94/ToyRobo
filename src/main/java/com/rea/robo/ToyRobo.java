@@ -1,5 +1,9 @@
 package main.java.com.rea.robo;
 
+/**
+ * The main Robo object.
+ * Robo has a location and a direction it is pointing to.
+ * **/
 public class ToyRobo {
 	private final Direction direction;
 	private final Location location;
