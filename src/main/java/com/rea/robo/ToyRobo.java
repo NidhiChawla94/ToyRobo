@@ -44,16 +44,18 @@ public class ToyRobo {
 		if (getClass() != obj.getClass())
 			return false;
 		ToyRobo other = (ToyRobo) obj;
-		
+
 		if (direction != other.direction)
 			return false;
 		if (location == null) {
 			if (other.location != null)
 				return false;
-		} else if (!location.equals(other.location))
+		} else if (!location.equals(other.location)){
 			return false;
+		}
+
 		return true;
 	}
-	
-	
+
+
 }

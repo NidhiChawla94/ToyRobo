@@ -1,6 +1,3 @@
-/**
- * 
- */
 package main.java.com.rea.test;
 
 import static org.junit.Assert.assertEquals;
@@ -13,10 +10,7 @@ import main.java.com.rea.commandpattern.PlaceCommand;
 import main.java.com.rea.robo.Direction;
 import main.java.com.rea.robo.ToyRobo;
 
-/**
- * @author nidhi chawla
- *
- */
+
 public class PlaceCommandTest {
 
 	private Command placeCommand;

@@ -18,22 +18,22 @@ public class MoveCommand implements Command {
 		
 		switch (robo.getDirection()) {
 		case NORTH:
-			if(robo.getLocation().getYCord() == Constants.YCordMaxBORDER)
+			if(robo.getLocation().getYCord() == Constants.Y_CORD_MAX_BORDER)
 				return robo;
 			
 			return new ToyRobo(robo.getLocation().getXCord(), robo.getLocation().getYCord() + 1, robo.getDirection());
 		case EAST:
-			if(robo.getLocation().getXCord() == Constants.XCordMaxBORDER)
+			if(robo.getLocation().getXCord() == Constants.X_CORD_MAX_BORDER)
 				return robo;
 			
 			return new ToyRobo(robo.getLocation().getXCord() + 1, robo.getLocation().getYCord(), robo.getDirection());
 		case SOUTH:
-			if(robo.getLocation().getYCord() == Constants.YCordMinBORDER)
+			if(robo.getLocation().getYCord() == Constants.Y_CORD_MIN_BORDER)
 				return robo;
 			
 			return new ToyRobo(robo.getLocation().getXCord(), robo.getLocation().getYCord() - 1, robo.getDirection());
 		case WEST:
-			if(robo.getLocation().getXCord() == Constants.XCordMinBORDER)
+			if(robo.getLocation().getXCord() == Constants.X_CORD_MIN_BORDER)
 				return robo;
 			
 			return new ToyRobo(robo.getLocation().getXCord() - 1, robo.getLocation().getYCord(), robo.getDirection());
