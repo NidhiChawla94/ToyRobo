@@ -19,3 +19,32 @@ Approach:
 	3. The solution implements command pattern to execute the actions entered by the user.
 	4. Move command : move only on valid coordinates.
 	5. Direction: this enum calculates which direction will be at left/right side of current direction.
+	
+Test Data:
+1.
+LEFT
+REPORT
+MOVE
+REPORT
+PLACE 0,1,NORTH
+REPORT
+LEFT
+REPORT
+MOVE
+REPORT
+LEFT
+REPORT
+MOVE
+REPORT
+LEFT
+REPORT
+MOVE
+REPORT
+LEFT
+REPORT
+MOVE
+REPORT
+
+2. PLACE -1,1,NORTH
+REPORT
+
