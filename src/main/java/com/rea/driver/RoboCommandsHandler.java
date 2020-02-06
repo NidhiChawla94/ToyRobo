@@ -17,40 +17,33 @@ import main.java.com.rea.util.Constants;
  * Responsible for sending the commands after interpreting the user input.
  * **/
 public class RoboCommandsHandler {
-	private static ToyRobo robo = null;
 	
-	void processCommands(List<String> commandsEnterredByUser) {
-		Command commantToBeExecuted = null;
+	
+	public Command processCommands(String command) {
+		Command commandToBeExecuted = null;
 		/**
 		 * For each command enterred by user
-		 * check which type of command it is and accordingly invoke respective command handlers.
+		 * check which type of command it is and accordingly create respective command handlers.
 		 * */
-		for(String command: commandsEnterredByUser) {
-			if (command.equals(Constants.LEFT)) {
-				commantToBeExecuted = new LeftCommand();
-			} else if (command.equals(Constants.MOVE)) {
-				commantToBeExecuted = new MoveCommand();
-			} else if (command.startsWith(Constants.PLACE)) {
-				commantToBeExecuted =  processPlaceCommand(command);
-			} else if (command.equals(Constants.REPORT)) {
-				commantToBeExecuted =  new ReportCommand();
-			} else if (command.equals(Constants.RIGHT)) {
-				commantToBeExecuted =  new RightCommand();
-			} else  {
-				System.out.println("Invalid command: "+ command);
-			}
-			/*
-			 * Ignoring all the commands that are enterred before the first place command.
-			 * This is to ensure robot is first placed and then any other commands are executed
-			 * **/
-			if(commantToBeExecuted!=null) {
-				if(!(robo == null && !(commantToBeExecuted instanceof PlaceCommand))) {
-					robo = commantToBeExecuted.execute(robo);
-				}
-			}
-		}
 		
+			if (command.equals(Constants.LEFT)) {
+				commandToBeExecuted = new LeftCommand();
+			} else if (command.equals(Constants.MOVE)) {
+				commandToBeExecuted = new MoveCommand();
+			} else if (command.startsWith(Constants.PLACE)) {
+				commandToBeExecuted =  processPlaceCommand(command);
+			} else if (command.equals(Constants.REPORT)) {
+				commandToBeExecuted =  new ReportCommand();
+			} else if (command.equals(Constants.RIGHT)) {
+				commandToBeExecuted =  new RightCommand();
+			} else  {
+				throw new IllegalArgumentException("Invalid command: "+ command);
+			}
+			
+			return commandToBeExecuted;
 	}
+	
+	
 
 	/**
 	 * This function is the processor of place command. It creates the command object after parsing through the string.
@@ -67,9 +60,8 @@ public class RoboCommandsHandler {
 			String[] commandDetails = command.split(" ")[1].split(",");
 			return new PlaceCommand(Integer.parseInt(commandDetails[0]), Integer.parseInt(commandDetails[1]), getDirectionFromCommand(commandDetails[2]));
 		} else {
-			System.out.println("Invalid Command: "+ command);
+			throw new IllegalArgumentException("Invalid Command location: "+ command);
 		}
-		return null;
 	}
 
 	/**

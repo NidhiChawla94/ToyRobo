@@ -13,7 +13,7 @@ import main.java.com.rea.robo.ToyRobo;
 public class MoveCommandTest {
 
 	private Command moveCommand;
-	private ToyRobo robot, testRobot;
+	private ToyRobo robot,testRobot;
 
 	@Before
 	public void setUp() {
@@ -24,6 +24,30 @@ public class MoveCommandTest {
 		robot = new ToyRobo(1, 1, Direction.NORTH);
 		testRobot = new ToyRobo(1, 2, Direction.NORTH);
 		assertEquals(testRobot,
+                moveCommand.execute(robot));
+	}
+	@Test
+	public void testNorthBorder() {
+		robot = new ToyRobo(0, 4, Direction.NORTH);
+		assertEquals(robot,
+                moveCommand.execute(robot));
+	}
+	@Test
+	public void testSouthBorder() {
+		robot = new ToyRobo(0, 0, Direction.SOUTH);
+		assertEquals(robot,
+                moveCommand.execute(robot));
+	}
+	@Test
+	public void testEastBorder() {
+		robot = new ToyRobo(4, 4, Direction.EAST);
+		assertEquals(robot,
+                moveCommand.execute(robot));
+	}
+	@Test
+	public void testWestBorder() {
+		robot = new ToyRobo(0, 1, Direction.WEST);
+		assertEquals(robot,
                 moveCommand.execute(robot));
 	}
 
