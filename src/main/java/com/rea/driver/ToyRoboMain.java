@@ -24,8 +24,7 @@ public class ToyRoboMain {
 		 * ***/
 		
 		System.out.println("Please enter commands. (hit enter after every command)");
-		System.out.println("To see the output press CTRL+Z");
-		System.out.println();
+		System.out.println("Note: To start the processing please enter CTRL+Z after enterring all commands");
 
 		while (scanner.hasNext()) {
 			commandsEnterredByUser.add(scanner.nextLine().trim().toUpperCase());

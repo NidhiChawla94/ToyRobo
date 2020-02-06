@@ -58,5 +58,10 @@ public class RoboCommandsHandlerTest {
 		assertTrue(handler.processCommands("REPORT") instanceof ReportCommand);
 	}
 
+	@Test(expected = IllegalArgumentException.class)
+	public void testInvalidCommandProcessing() {
+		handler.processCommands("jguujb");
+	}
+
 	
 }
