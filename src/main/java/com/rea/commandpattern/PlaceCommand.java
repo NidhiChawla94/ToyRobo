@@ -17,6 +17,7 @@ public class PlaceCommand implements Command {
     
     @Override
     public ToyRobo execute(ToyRobo robo) {
+    	
         return this.robo;
     }
 }
